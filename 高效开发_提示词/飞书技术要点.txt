@@ -1,0 +1,5 @@
+技术要点
+
+- 访问凭证机制 ：飞书API使用tenant_access_token进行身份验证，该token需要通过app_id和app_secret动态获取
+- Token有效期 ：tenant_access_token有2小时的有效期，需要动态刷新
+- SDK配置 ：直接从NodeSDK示例代码中提取配置参数，确保配置的准确性
