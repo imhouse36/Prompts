@@ -1,0 +1,12 @@
+# 忽略特定目录
+/node_modules/
+/dist/
+/Test/
+
+# 忽略特定文件类型
+*.log
+*.tmp
+
+# 忽略特定文件
+.env
+secret.key
