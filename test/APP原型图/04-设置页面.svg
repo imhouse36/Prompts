@@ -1,0 +1,158 @@
+<svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="375" height="812" fill="#F8F9FA"/>
+  
+  <!-- 状态栏 -->
+  <rect width="375" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">9:41</text>
+  <circle cx="331" cy="22" r="3" fill="#34C759"/>
+  <rect x="338" y="19" width="18" height="10" rx="2" fill="#000000"/>
+  <rect x="340" y="21" width="14" height="6" rx="1" fill="#FFFFFF"/>
+  
+  <!-- 顶部导航 -->
+  <rect y="44" width="375" height="60" fill="#FFFFFF"/>
+  <text x="187.5" y="82" font-family="SF Pro Display" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">设置</text>
+  
+  <!-- 个人资料卡片 -->
+  <rect y="104" width="375" height="100" fill="#FFFFFF"/>
+  <circle cx="70" cy="154" r="30" fill="#FF6B6B"/>
+  <text x="70" y="162" font-family="SF Pro Display" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">张</text>
+  
+  <text x="115" y="145" font-family="SF Pro Display" font-size="18" font-weight="600" fill="#000000">张小明</text>
+  <text x="115" y="165" font-family="SF Pro Display" font-size="14" fill="#8E8E93">已坚持番茄工作法 28 天</text>
+  <text x="115" y="180" font-family="SF Pro Display" font-size="12" fill="#8E8E93">累计完成 156 个番茄</text>
+  
+  <!-- 编辑按钮 -->
+  <rect x="315" y="139" width="40" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="335" y="158" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">编辑</text>
+  
+  <!-- 番茄设置 -->
+  <rect y="214" width="375" height="200" fill="#FFFFFF"/>
+  <text x="20" y="240" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">番茄设置</text>
+  
+  <!-- 专注时长 -->
+  <rect x="20" y="255" width="335" height="50" fill="#FFFFFF"/>
+  <circle cx="40" cy="275" r="15" fill="#FF6B6B"/>
+  <circle cx="40" cy="275" r="8" fill="#FFFFFF"/>
+  <text x="70" y="275" font-family="SF Pro Display" font-size="14" fill="#000000">专注时长</text>
+  <text x="70" y="290" font-family="SF Pro Display" font-size="12" fill="#8E8E93">每个番茄的工作时间</text>
+  <text x="335" y="280" font-family="SF Pro Display" font-size="14" fill="#8E8E93" text-anchor="end">25分钟</text>
+  <path d="M325 275L330 280L325 285" stroke="#8E8E93" stroke-width="1" fill="none"/>
+  
+  <!-- 短休息 -->
+  <rect x="20" y="305" width="335" height="50" fill="#FFFFFF"/>
+  <circle cx="40" cy="325" r="15" fill="#4ECDC4"/>
+  <circle cx="40" cy="325" r="8" fill="#FFFFFF"/>
+  <text x="70" y="325" font-family="SF Pro Display" font-size="14" fill="#000000">短休息</text>
+  <text x="70" y="340" font-family="SF Pro Display" font-size="12" fill="#8E8E93">番茄间的休息时间</text>
+  <text x="335" y="330" font-family="SF Pro Display" font-size="14" fill="#8E8E93" text-anchor="end">5分钟</text>
+  <path d="M325 325L330 330L325 335" stroke="#8E8E93" stroke-width="1" fill="none"/>
+  
+  <!-- 长休息 -->
+  <rect x="20" y="355" width="335" height="50" fill="#FFFFFF"/>
+  <circle cx="40" cy="375" r="15" fill="#FFD93D"/>
+  <circle cx="40" cy="375" r="8" fill="#FFFFFF"/>
+  <text x="70" y="375" font-family="SF Pro Display" font-size="14" fill="#000000">长休息</text>
+  <text x="70" y="390" font-family="SF Pro Display" font-size="12" fill="#8E8E93">4个番茄后的长休息</text>
+  <text x="335" y="380" font-family="SF Pro Display" font-size="14" fill="#8E8E93" text-anchor="end">15分钟</text>
+  <path d="M325 375L330 380L325 385" stroke="#8E8E93" stroke-width="1" fill="none"/>
+  
+  <!-- 提醒设置 -->
+  <rect y="424" width="375" height="150" fill="#FFFFFF"/>
+  <text x="20" y="450" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">提醒设置</text>
+  
+  <!-- 声音提醒 -->
+  <rect x="20" y="465" width="335" height="50" fill="#FFFFFF"/>
+  <circle cx="40" cy="485" r="15" fill="#34C759"/>
+  <path d="M35 480L40 485L35 490M40 480L45 485L40 490" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <text x="70" y="485" font-family="SF Pro Display" font-size="14" fill="#000000">声音提醒</text>
+  <text x="70" y="500" font-family="SF Pro Display" font-size="12" fill="#8E8E93">番茄结束时播放提示音</text>
+  
+  <!-- 开关 -->
+  <rect x="315" y="475" width="40" height="20" rx="10" fill="#34C759"/>
+  <circle cx="345" cy="485" r="8" fill="#FFFFFF"/>
+  
+  <!-- 振动提醒 -->
+  <rect x="20" y="515" width="335" height="50" fill="#FFFFFF"/>
+  <circle cx="40" cy="535" r="15" fill="#FF6B6B"/>
+  <path d="M35 530L45 530M35 535L45 535M35 540L45 540" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="70" y="535" font-family="SF Pro Display" font-size="14" fill="#000000">振动提醒</text>
+  <text x="70" y="550" font-family="SF Pro Display" font-size="12" fill="#8E8E93">番茄结束时设备振动</text>
+  
+  <!-- 开关 -->
+  <rect x="315" y="525" width="40" height="20" rx="10" fill="#E5E5EA"/>
+  <circle cx="325" cy="535" r="8" fill="#FFFFFF"/>
+  
+  <!-- 应用设置 -->
+  <rect y="584" width="375" height="100" fill="#FFFFFF"/>
+  <text x="20" y="610" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">应用设置</text>
+  
+  <!-- 主题模式 -->
+  <rect x="20" y="625" width="335" height="50" fill="#FFFFFF"/>
+  <circle cx="40" cy="645" r="15" fill="#8E8E93"/>
+  <circle cx="35" cy="640" r="6" fill="#FFFFFF"/>
+  <path d="M41 640A6 6 0 0 1 47 646A6 6 0 0 1 41 652A6 6 0 0 1 35 646" fill="#8E8E93"/>
+  <text x="70" y="645" font-family="SF Pro Display" font-size="14" fill="#000000">深色模式</text>
+  <text x="70" y="660" font-family="SF Pro Display" font-size="12" fill="#8E8E93">跟随系统设置</text>
+  
+  <!-- 开关 -->
+  <rect x="315" y="635" width="40" height="20" rx="10" fill="#E5E5EA"/>
+  <circle cx="325" cy="645" r="8" fill="#FFFFFF"/>
+  
+  <!-- 其他选项 -->
+  <rect y="694" width="375" height="150" fill="#F8F9FA"/>
+  
+  <!-- 数据导出 -->
+  <rect x="20" y="704" width="335" height="40" rx="8" fill="#FFFFFF"/>
+  <circle cx="40" cy="724" r="12" fill="#4ECDC4"/>
+  <path d="M35 721L40 716L45 721M40 716L40 732" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <text x="65" y="728" font-family="SF Pro Display" font-size="14" fill="#000000">导出数据</text>
+  <path d="M325 720L330 724L325 728" stroke="#8E8E93" stroke-width="1" fill="none"/>
+  
+  <!-- 关于我们 -->
+  <rect x="20" y="754" width="335" height="40" rx="8" fill="#FFFFFF"/>
+  <circle cx="40" cy="774" r="12" fill="#FFD93D"/>
+  <text x="40" y="778" font-family="SF Pro Display" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">i</text>
+  <text x="65" y="778" font-family="SF Pro Display" font-size="14" fill="#000000">关于我们</text>
+  <path d="M325 770L330 774L325 778" stroke="#8E8E93" stroke-width="1" fill="none"/>
+  
+  <!-- 退出登录 -->
+  <rect x="20" y="804" width="335" height="40" rx="8" fill="#FFFFFF"/>
+  <circle cx="40" cy="824" r="12" fill="#FF3B30"/>
+  <path d="M35 824L40 819L45 824M40 819L40 829" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <text x="65" y="828" font-family="SF Pro Display" font-size="14" fill="#FF3B30">退出登录</text>
+  
+  <!-- 底部导航 -->
+  <rect y="728" width="375" height="84" fill="#FFFFFF"/>
+  <line x1="0" y1="728" x2="375" y2="728" stroke="#E5E5EA" stroke-width="1"/>
+  
+  <!-- 导航项 -->
+  <g>
+    <!-- 计时器 -->
+    <circle cx="75" cy="755" r="3" fill="none" stroke="#8E8E93" stroke-width="2"/>
+    <path d="M65 765C65 765 70 760 75 760C80 760 85 765 85 765" stroke="#8E8E93" stroke-width="2" fill="none"/>
+    <text x="75" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">计时器</text>
+    
+    <!-- 任务 -->
+    <rect x="140" y="750" width="20" height="15" rx="2" fill="#8E8E93"/>
+    <line x1="145" y1="755" x2="155" y2="755" stroke="#FFFFFF" stroke-width="1"/>
+    <line x1="145" y1="760" x2="155" y2="760" stroke="#FFFFFF" stroke-width="1"/>
+    <text x="150" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">任务</text>
+    
+    <!-- 统计 -->
+    <rect x="215" y="750" width="20" height="15" rx="2" fill="#8E8E93"/>
+    <rect x="218" y="760" width="3" height="5" fill="#FFFFFF"/>
+    <rect x="222" y="757" width="3" height="8" fill="#FFFFFF"/>
+    <rect x="226" y="753" width="3" height="12" fill="#FFFFFF"/>
+    <rect x="230" y="755" width="3" height="10" fill="#FFFFFF"/>
+    <text x="225" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">统计</text>
+    
+    <!-- 设置 (当前页面) -->
+    <circle cx="300" cy="757.5" r="10" fill="#FF6B6B"/>
+    <circle cx="300" cy="757.5" r="3" fill="#FFFFFF"/>
+    <text x="300" y="785" font-family="SF Pro Display" font-size="10" fill="#FF6B6B" text-anchor="middle">设置</text>
+  </g>
+  
+  <!-- Home Indicator -->
+  <rect x="150" y="795" width="75" height="4" rx="2" fill="#000000"/>
+</svg>

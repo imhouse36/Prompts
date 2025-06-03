@@ -1,0 +1,157 @@
+<svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="375" height="812" fill="#F8F9FA"/>
+  
+  <!-- 状态栏 -->
+  <rect width="375" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">9:41</text>
+  <circle cx="331" cy="22" r="3" fill="#34C759"/>
+  <rect x="338" y="19" width="18" height="10" rx="2" fill="#000000"/>
+  <rect x="340" y="21" width="14" height="6" rx="1" fill="#FFFFFF"/>
+  
+  <!-- 顶部导航 -->
+  <rect y="44" width="375" height="60" fill="#FFFFFF"/>
+  <text x="187.5" y="82" font-family="SF Pro Display" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">任务管理</text>
+  
+  <!-- 添加按钮 -->
+  <circle cx="335" cy="74" r="20" fill="#FF6B6B"/>
+  <line x1="325" y1="74" x2="345" y2="74" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="335" y1="64" x2="335" y2="84" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- 搜索栏 -->
+  <rect x="20" y="120" width="335" height="40" rx="20" fill="#FFFFFF"/>
+  <circle cx="40" cy="140" r="8" fill="none" stroke="#8E8E93" stroke-width="2"/>
+  <line x1="46" y1="146" x2="50" y2="150" stroke="#8E8E93" stroke-width="2"/>
+  <text x="60" y="145" font-family="SF Pro Display" font-size="16" fill="#8E8E93">搜索任务...</text>
+  
+  <!-- 分类标签 -->
+  <rect y="180" width="375" height="50" fill="#FFFFFF"/>
+  <text x="20" y="200" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#8E8E93">分类</text>
+  
+  <!-- 标签滚动区域 -->
+  <rect x="20" y="210" width="60" height="30" rx="15" fill="#FF6B6B"/>
+  <text x="50" y="230" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#FFFFFF" text-anchor="middle">全部</text>
+  
+  <rect x="90" y="210" width="60" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="120" y="230" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">工作</text>
+  
+  <rect x="160" y="210" width="60" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="190" y="230" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">学习</text>
+  
+  <rect x="230" y="210" width="60" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="260" y="230" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">生活</text>
+  
+  <rect x="300" y="210" width="60" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="330" y="230" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">运动</text>
+  
+  <!-- 任务列表 -->
+  <rect y="250" width="375" height="478" fill="#F8F9FA"/>
+  
+  <!-- 今日任务标题 -->
+  <text x="20" y="275" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">今日任务 (5)</text>
+  
+  <!-- 任务项1 - 进行中 -->
+  <rect x="20" y="290" width="335" height="80" rx="12" fill="#FFFFFF"/>
+  <circle cx="40" cy="315" r="10" fill="#FF6B6B"/>
+  <path d="M35 315L38 318L45 311" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  
+  <rect x="60" y="300" width="8" height="8" rx="2" fill="#FF6B6B"/>
+  <text x="75" y="310" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">完成项目文档编写</text>
+  <text x="75" y="328" font-family="SF Pro Display" font-size="12" fill="#8E8E93">预计 3 个番茄 · 工作</text>
+  
+  <!-- 进度条 -->
+  <rect x="75" y="340" width="200" height="4" rx="2" fill="#F2F2F7"/>
+  <rect x="75" y="340" width="80" height="4" rx="2" fill="#FF6B6B"/>
+  <text x="285" y="345" font-family="SF Pro Display" font-size="10" fill="#8E8E93">2/3</text>
+  
+  <!-- 更多按钮 -->
+  <circle cx="325" cy="315" r="3" fill="#8E8E93"/>
+  <circle cx="325" cy="325" r="3" fill="#8E8E93"/>
+  <circle cx="325" cy="335" r="3" fill="#8E8E93"/>
+  
+  <!-- 任务项2 - 未开始 -->
+  <rect x="20" y="380" width="335" height="80" rx="12" fill="#FFFFFF"/>
+  <circle cx="40" cy="405" r="10" fill="none" stroke="#E5E5EA" stroke-width="2"/>
+  
+  <rect x="60" y="390" width="8" height="8" rx="2" fill="#4ECDC4"/>
+  <text x="75" y="400" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">学习新技术栈</text>
+  <text x="75" y="418" font-family="SF Pro Display" font-size="12" fill="#8E8E93">预计 2 个番茄 · 学习</text>
+  
+  <!-- 进度条 -->
+  <rect x="75" y="430" width="200" height="4" rx="2" fill="#F2F2F7"/>
+  <text x="285" y="435" font-family="SF Pro Display" font-size="10" fill="#8E8E93">0/2</text>
+  
+  <!-- 更多按钮 -->
+  <circle cx="325" cy="405" r="3" fill="#8E8E93"/>
+  <circle cx="325" cy="415" r="3" fill="#8E8E93"/>
+  <circle cx="325" cy="425" r="3" fill="#8E8E93"/>
+  
+  <!-- 任务项3 - 已完成 -->
+  <rect x="20" y="470" width="335" height="80" rx="12" fill="#FFFFFF"/>
+  <circle cx="40" cy="495" r="10" fill="#34C759"/>
+  <path d="M35 495L38 498L45 491" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  
+  <rect x="60" y="480" width="8" height="8" rx="2" fill="#FFD93D"/>
+  <text x="75" y="490" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#8E8E93" text-decoration="line-through">晨间锻炼</text>
+  <text x="75" y="508" font-family="SF Pro Display" font-size="12" fill="#8E8E93">完成 1 个番茄 · 运动</text>
+  
+  <!-- 进度条 -->
+  <rect x="75" y="520" width="200" height="4" rx="2" fill="#34C759"/>
+  <text x="285" y="525" font-family="SF Pro Display" font-size="10" fill="#34C759">1/1</text>
+  
+  <!-- 完成时间 -->
+  <text x="325" y="495" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="end">08:30</text>
+  
+  <!-- 明日任务标题 -->
+  <text x="20" y="580" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">明日任务 (2)</text>
+  
+  <!-- 任务项4 -->
+  <rect x="20" y="595" width="335" height="60" rx="12" fill="#FFFFFF"/>
+  <circle cx="40" cy="615" r="10" fill="none" stroke="#E5E5EA" stroke-width="2"/>
+  
+  <rect x="60" y="605" width="8" height="8" rx="2" fill="#FF6B6B"/>
+  <text x="75" y="615" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">团队会议准备</text>
+  <text x="75" y="633" font-family="SF Pro Display" font-size="12" fill="#8E8E93">预计 1 个番茄 · 工作</text>
+  
+  <!-- 任务项5 -->
+  <rect x="20" y="665" width="335" height="60" rx="12" fill="#FFFFFF"/>
+  <circle cx="40" cy="685" r="10" fill="none" stroke="#E5E5EA" stroke-width="2"/>
+  
+  <rect x="60" y="675" width="8" height="8" rx="2" fill="#4ECDC4"/>
+  <text x="75" y="685" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">阅读技术文章</text>
+  <text x="75" y="703" font-family="SF Pro Display" font-size="12" fill="#8E8E93">预计 2 个番茄 · 学习</text>
+  
+  <!-- 底部导航 -->
+  <rect y="728" width="375" height="84" fill="#FFFFFF"/>
+  <line x1="0" y1="728" x2="375" y2="728" stroke="#E5E5EA" stroke-width="1"/>
+  
+  <!-- 导航项 -->
+  <g>
+    <!-- 计时器 -->
+    <circle cx="75" cy="755" r="3" fill="none" stroke="#8E8E93" stroke-width="2"/>
+    <path d="M65 765C65 765 70 760 75 760C80 760 85 765 85 765" stroke="#8E8E93" stroke-width="2" fill="none"/>
+    <text x="75" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">计时器</text>
+    
+    <!-- 任务 (当前页面) -->
+    <rect x="140" y="750" width="20" height="15" rx="2" fill="#FF6B6B"/>
+    <line x1="145" y1="755" x2="155" y2="755" stroke="#FFFFFF" stroke-width="1"/>
+    <line x1="145" y1="760" x2="155" y2="760" stroke="#FFFFFF" stroke-width="1"/>
+    <text x="150" y="785" font-family="SF Pro Display" font-size="10" fill="#FF6B6B" text-anchor="middle">任务</text>
+    
+    <!-- 统计 -->
+    <rect x="215" y="750" width="20" height="15" rx="2" fill="#8E8E93"/>
+    <rect x="218" y="760" width="3" height="5" fill="#FFFFFF"/>
+    <rect x="222" y="757" width="3" height="8" fill="#FFFFFF"/>
+    <rect x="226" y="753" width="3" height="12" fill="#FFFFFF"/>
+    <rect x="230" y="755" width="3" height="10" fill="#FFFFFF"/>
+    <text x="225" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">统计</text>
+    
+    <!-- 设置 -->
+    <circle cx="300" cy="757.5" r="10" fill="none" stroke="#8E8E93" stroke-width="2"/>
+    <circle cx="300" cy="757.5" r="3" fill="#8E8E93"/>
+    <text x="300" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">设置</text>
+  </g>
+  
+  <!-- Home Indicator -->
+  <rect x="150" y="795" width="75" height="4" rx="2" fill="#000000"/>
+</svg>

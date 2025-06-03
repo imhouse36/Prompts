@@ -1,0 +1,109 @@
+<svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="375" height="812" fill="#F8F9FA"/>
+  
+  <!-- 状态栏 -->
+  <rect width="375" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">9:41</text>
+  <circle cx="331" cy="22" r="3" fill="#34C759"/>
+  <rect x="338" y="19" width="18" height="10" rx="2" fill="#000000"/>
+  <rect x="340" y="21" width="14" height="6" rx="1" fill="#FFFFFF"/>
+  
+  <!-- 顶部导航 -->
+  <rect y="44" width="375" height="60" fill="#FFFFFF"/>
+  <text x="187.5" y="82" font-family="SF Pro Display" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">番茄工作法</text>
+  
+  <!-- 设置按钮 -->
+  <circle cx="335" cy="74" r="20" fill="#F2F2F7"/>
+  <path d="M330 69L340 74L330 79" stroke="#8E8E93" stroke-width="2" fill="none"/>
+  
+  <!-- 主计时器区域 -->
+  <rect y="104" width="375" height="400" fill="#FFFFFF"/>
+  
+  <!-- 番茄图标 -->
+  <circle cx="187.5" cy="200" r="80" fill="#FF6B6B" opacity="0.1"/>
+  <circle cx="187.5" cy="200" r="60" fill="#FF6B6B"/>
+  <path d="M187.5 160C187.5 160 175 150 165 160C155 170 165 180 187.5 180C210 180 220 170 210 160C200 150 187.5 160 187.5 160Z" fill="#4ECDC4"/>
+  
+  <!-- 计时器显示 -->
+  <text x="187.5" y="280" font-family="SF Pro Display" font-size="48" font-weight="300" fill="#000000" text-anchor="middle">25:00</text>
+  <text x="187.5" y="310" font-family="SF Pro Display" font-size="16" fill="#8E8E93" text-anchor="middle">专注时间</text>
+  
+  <!-- 进度环 -->
+  <circle cx="187.5" cy="200" r="90" fill="none" stroke="#F2F2F7" stroke-width="8"/>
+  <circle cx="187.5" cy="200" r="90" fill="none" stroke="#FF6B6B" stroke-width="8" stroke-dasharray="565.48" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 187.5 200)"/>
+  
+  <!-- 控制按钮 -->
+  <circle cx="187.5" cy="380" r="35" fill="#FF6B6B"/>
+  <polygon points="175,380 200,365 200,395" fill="#FFFFFF"/>
+  
+  <!-- 暂停/重置按钮 -->
+  <circle cx="120" cy="380" r="25" fill="#F2F2F7"/>
+  <rect x="112" y="372" width="6" height="16" fill="#8E8E93"/>
+  <rect x="122" y="372" width="6" height="16" fill="#8E8E93"/>
+  
+  <circle cx="255" cy="380" r="25" fill="#F2F2F7"/>
+  <path d="M248 373L262 380L248 387" stroke="#8E8E93" stroke-width="2" fill="none"/>
+  <path d="M262 373L248 380L262 387" stroke="#8E8E93" stroke-width="2" fill="none"/>
+  
+  <!-- 当前任务 -->
+  <rect y="504" width="375" height="80" fill="#FFFFFF"/>
+  <text x="20" y="530" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">当前任务</text>
+  <text x="20" y="555" font-family="SF Pro Display" font-size="14" fill="#8E8E93">完成项目文档编写</text>
+  <rect x="20" y="565" width="335" height="8" rx="4" fill="#F2F2F7"/>
+  <rect x="20" y="565" width="134" height="8" rx="4" fill="#FF6B6B"/>
+  
+  <!-- 今日统计 -->
+  <rect y="584" width="375" height="120" fill="#F8F9FA"/>
+  <text x="20" y="610" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">今日统计</text>
+  
+  <!-- 统计卡片 -->
+  <rect x="20" y="625" width="100" height="70" rx="12" fill="#FFFFFF"/>
+  <text x="70" y="645" font-family="SF Pro Display" font-size="24" font-weight="600" fill="#FF6B6B" text-anchor="middle">3</text>
+  <text x="70" y="665" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">完成番茄</text>
+  <text x="70" y="680" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">75分钟</text>
+  
+  <rect x="137.5" y="625" width="100" height="70" rx="12" fill="#FFFFFF"/>
+  <text x="187.5" y="645" font-family="SF Pro Display" font-size="24" font-weight="600" fill="#4ECDC4" text-anchor="middle">2</text>
+  <text x="187.5" y="665" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">短休息</text>
+  <text x="187.5" y="680" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">10分钟</text>
+  
+  <rect x="255" y="625" width="100" height="70" rx="12" fill="#FFFFFF"/>
+  <text x="305" y="645" font-family="SF Pro Display" font-size="24" font-weight="600" fill="#FFD93D" text-anchor="middle">1</text>
+  <text x="305" y="665" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">长休息</text>
+  <text x="305" y="680" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">15分钟</text>
+  
+  <!-- 底部导航 -->
+  <rect y="728" width="375" height="84" fill="#FFFFFF"/>
+  <line x1="0" y1="728" x2="375" y2="728" stroke="#E5E5EA" stroke-width="1"/>
+  
+  <!-- 导航项 -->
+  <g>
+    <!-- 计时器 (当前页面) -->
+    <circle cx="75" cy="755" r="3" fill="#FF6B6B"/>
+    <path d="M65 765C65 765 70 760 75 760C80 760 85 765 85 765" stroke="#FF6B6B" stroke-width="2" fill="none"/>
+    <text x="75" y="785" font-family="SF Pro Display" font-size="10" fill="#FF6B6B" text-anchor="middle">计时器</text>
+    
+    <!-- 任务 -->
+    <rect x="140" y="750" width="20" height="15" rx="2" fill="#8E8E93"/>
+    <line x1="145" y1="755" x2="155" y2="755" stroke="#FFFFFF" stroke-width="1"/>
+    <line x1="145" y1="760" x2="155" y2="760" stroke="#FFFFFF" stroke-width="1"/>
+    <text x="150" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">任务</text>
+    
+    <!-- 统计 -->
+    <rect x="215" y="750" width="20" height="15" rx="2" fill="#8E8E93"/>
+    <rect x="218" y="760" width="3" height="5" fill="#FFFFFF"/>
+    <rect x="222" y="757" width="3" height="8" fill="#FFFFFF"/>
+    <rect x="226" y="753" width="3" height="12" fill="#FFFFFF"/>
+    <rect x="230" y="755" width="3" height="10" fill="#FFFFFF"/>
+    <text x="225" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">统计</text>
+    
+    <!-- 设置 -->
+    <circle cx="300" cy="757.5" r="10" fill="none" stroke="#8E8E93" stroke-width="2"/>
+    <circle cx="300" cy="757.5" r="3" fill="#8E8E93"/>
+    <text x="300" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">设置</text>
+  </g>
+  
+  <!-- Home Indicator -->
+  <rect x="150" y="795" width="75" height="4" rx="2" fill="#000000"/>
+</svg>

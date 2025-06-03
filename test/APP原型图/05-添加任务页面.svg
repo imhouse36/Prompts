@@ -1,0 +1,120 @@
+<svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="375" height="812" fill="#F8F9FA"/>
+  
+  <!-- 状态栏 -->
+  <rect width="375" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">9:41</text>
+  <circle cx="331" cy="22" r="3" fill="#34C759"/>
+  <rect x="338" y="19" width="18" height="10" rx="2" fill="#000000"/>
+  <rect x="340" y="21" width="14" height="6" rx="1" fill="#FFFFFF"/>
+  
+  <!-- 顶部导航 -->
+  <rect y="44" width="375" height="60" fill="#FFFFFF"/>
+  <text x="30" y="82" font-family="SF Pro Display" font-size="16" fill="#FF6B6B">取消</text>
+  <text x="187.5" y="82" font-family="SF Pro Display" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">新建任务</text>
+  <text x="345" y="82" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#FF6B6B" text-anchor="end">保存</text>
+  
+  <!-- 任务标题输入 -->
+  <rect y="104" width="375" height="80" fill="#FFFFFF"/>
+  <text x="20" y="130" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">任务标题</text>
+  <rect x="20" y="140" width="335" height="40" rx="8" fill="#F8F9FA" stroke="#E5E5EA" stroke-width="1"/>
+  <text x="30" y="165" font-family="SF Pro Display" font-size="16" fill="#000000">完成项目文档编写</text>
+  
+  <!-- 任务描述输入 -->
+  <rect y="184" width="375" height="120" fill="#FFFFFF"/>
+  <text x="20" y="210" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">任务描述 (可选)</text>
+  <rect x="20" y="220" width="335" height="80" rx="8" fill="#F8F9FA" stroke="#E5E5EA" stroke-width="1"/>
+  <text x="30" y="245" font-family="SF Pro Display" font-size="14" fill="#8E8E93">详细描述任务内容和要求...</text>
+  
+  <!-- 分类选择 -->
+  <rect y="314" width="375" height="100" fill="#FFFFFF"/>
+  <text x="20" y="340" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">任务分类</text>
+  
+  <!-- 分类选项 -->
+  <rect x="20" y="355" width="70" height="35" rx="17.5" fill="#FF6B6B"/>
+  <text x="55" y="377" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#FFFFFF" text-anchor="middle">工作</text>
+  
+  <rect x="100" y="355" width="70" height="35" rx="17.5" fill="#F2F2F7"/>
+  <text x="135" y="377" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">学习</text>
+  
+  <rect x="180" y="355" width="70" height="35" rx="17.5" fill="#F2F2F7"/>
+  <text x="215" y="377" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">生活</text>
+  
+  <rect x="260" y="355" width="70" height="35" rx="17.5" fill="#F2F2F7"/>
+  <text x="295" y="377" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">运动</text>
+  
+  <!-- 预计番茄数 -->
+  <rect y="424" width="375" height="80" fill="#FFFFFF"/>
+  <text x="20" y="450" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">预计番茄数</text>
+  <text x="20" y="470" font-family="SF Pro Display" font-size="12" fill="#8E8E93">估算完成此任务需要的番茄数量</text>
+  
+  <!-- 番茄数选择器 -->
+  <rect x="20" y="480" width="335" height="40" rx="8" fill="#F8F9FA"/>
+  
+  <!-- 减少按钮 -->
+  <circle cx="50" cy="500" r="15" fill="#E5E5EA"/>
+  <line x1="43" y1="500" x2="57" y2="500" stroke="#8E8E93" stroke-width="2"/>
+  
+  <!-- 数量显示 -->
+  <text x="187.5" y="508" font-family="SF Pro Display" font-size="24" font-weight="600" fill="#FF6B6B" text-anchor="middle">3</text>
+  <text x="187.5" y="525" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="middle">个番茄 (约75分钟)</text>
+  
+  <!-- 增加按钮 -->
+  <circle cx="325" cy="500" r="15" fill="#FF6B6B"/>
+  <line x1="318" y1="500" x2="332" y2="500" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="325" y1="493" x2="325" y2="507" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- 优先级设置 -->
+  <rect y="514" width="375" height="100" fill="#FFFFFF"/>
+  <text x="20" y="540" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">优先级</text>
+  
+  <!-- 优先级选项 -->
+  <rect x="20" y="555" width="100" height="45" rx="8" fill="#FFF5F5" stroke="#FF6B6B" stroke-width="2"/>
+  <circle cx="45" cy="570" r="6" fill="#FF6B6B"/>
+  <text x="60" y="575" font-family="SF Pro Display" font-size="12" font-weight="600" fill="#FF6B6B">高优先级</text>
+  <text x="60" y="590" font-family="SF Pro Display" font-size="10" fill="#FF6B6B">紧急重要</text>
+  
+  <rect x="137.5" y="555" width="100" height="45" rx="8" fill="#F8F9FA"/>
+  <circle cx="162.5" cy="570" r="6" fill="#FFD93D"/>
+  <text x="177.5" y="575" font-family="SF Pro Display" font-size="12" fill="#8E8E93">中优先级</text>
+  <text x="177.5" y="590" font-family="SF Pro Display" font-size="10" fill="#8E8E93">重要不紧急</text>
+  
+  <rect x="255" y="555" width="100" height="45" rx="8" fill="#F8F9FA"/>
+  <circle cx="280" cy="570" r="6" fill="#4ECDC4"/>
+  <text x="295" y="575" font-family="SF Pro Display" font-size="12" fill="#8E8E93">低优先级</text>
+  <text x="295" y="590" font-family="SF Pro Display" font-size="10" fill="#8E8E93">不紧急不重要</text>
+  
+  <!-- 截止日期 -->
+  <rect y="624" width="375" height="80" fill="#FFFFFF"/>
+  <text x="20" y="650" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">截止日期 (可选)</text>
+  
+  <rect x="20" y="660" width="335" height="40" rx="8" fill="#F8F9FA"/>
+  <circle cx="40" cy="680" r="8" fill="#4ECDC4"/>
+  <path d="M36 676L40 680L44 676M36 684L44 684M36 678L44 678M36 682L44 682" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="60" y="685" font-family="SF Pro Display" font-size="14" fill="#000000">2024年3月20日</text>
+  <path d="M325 676L330 680L325 684" stroke="#8E8E93" stroke-width="1" fill="none"/>
+  
+  <!-- 提醒设置 -->
+  <rect y="714" width="375" height="80" fill="#FFFFFF"/>
+  <text x="20" y="740" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">提醒设置</text>
+  
+  <rect x="20" y="750" width="335" height="40" rx="8" fill="#F8F9FA"/>
+  <circle cx="40" cy="770" r="8" fill="#FFD93D"/>
+  <path d="M36 766L40 762L44 766M40 762L40 778" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <text x="60" y="775" font-family="SF Pro Display" font-size="14" fill="#000000">开始前10分钟提醒</text>
+  
+  <!-- 开关 -->
+  <rect x="315" y="760" width="30" height="16" rx="8" fill="#34C759"/>
+  <circle cx="337" cy="768" r="6" fill="#FFFFFF"/>
+  
+  <!-- 底部按钮区域 -->
+  <rect y="804" width="375" height="80" fill="#FFFFFF"/>
+  
+  <!-- 保存按钮 -->
+  <rect x="20" y="820" width="335" height="50" rx="25" fill="#FF6B6B"/>
+  <text x="187.5" y="850" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">创建任务</text>
+  
+  <!-- Home Indicator -->
+  <rect x="150" y="885" width="75" height="4" rx="2" fill="#000000"/>
+</svg>

@@ -3,584 +3,1045 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在线课表管理系统</title>
-    
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- TDesign Vue CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/tdesign-vue-next/dist/tdesign.css">
-    
-    <!-- Vue 3 CDN -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
-    <!-- TDesign Vue Next CDN -->
-    <script src="https://unpkg.com/tdesign-vue-next/dist/tdesign.min.js"></script>
-    
+    <title>TDesign 在线课表管理系统</title>
     <style>
-        /* 自定义样式 */
-        .schedule-grid {
+        :root {
+            --td-brand-color: #0052d9;
+            --td-brand-color-1: #f2f3ff;
+            --td-brand-color-2: #d9e1ff;
+            --td-brand-color-3: #b5c7ff;
+            --td-brand-color-4: #8eabff;
+            --td-brand-color-5: #618dff;
+            --td-brand-color-6: #366ef4;
+            --td-brand-color-7: #0052d9;
+            --td-brand-color-8: #003cab;
+            --td-brand-color-9: #002a7c;
+            --td-brand-color-10: #001a57;
+            
+            --td-success-color: #00a870;
+            --td-warning-color: #ed7b2f;
+            --td-error-color: #d54941;
+            
+            --td-text-color-primary: #000000;
+            --td-text-color-secondary: #4e5969;
+            --td-text-color-placeholder: #86909c;
+            --td-text-color-disabled: #c9cdd4;
+            
+            --td-bg-color-page: #f5f7fa;
+            --td-bg-color-container: #ffffff;
+            --td-bg-color-container-hover: #f2f3f5;
+            --td-bg-color-container-active: #e7e8ea;
+            
+            --td-border-level-1-color: #e7e7e7;
+            --td-border-level-2-color: #dcdcdc;
+            
+            --td-shadow-1: 0 1px 10px rgba(0, 0, 0, 0.05), 0 4px 5px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+            --td-shadow-2: 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 8px 10px 1px rgba(0, 0, 0, 0.06), 0 5px 5px -3px rgba(0, 0, 0, 0.1);
+            --td-shadow-3: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+            
+            --td-radius-small: 3px;
+            --td-radius-medium: 6px;
+            --td-radius-large: 9px;
+            --td-radius-extra-large: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--td-bg-color-page);
+            color: var(--td-text-color-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .header {
+            background: var(--td-bg-color-container);
+            border-radius: var(--td-radius-large);
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--td-shadow-1);
+            text-align: center;
+            border: 1px solid var(--td-border-level-1-color);
+        }
+
+        .header-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--td-brand-color-6) 0%, var(--td-brand-color-7) 100%);
+            border-radius: var(--td-radius-extra-large);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--td-text-color-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: var(--td-text-color-secondary);
+            line-height: 1.6;
+        }
+
+        .controls {
+            background: var(--td-bg-color-container);
+            border-radius: var(--td-radius-large);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--td-shadow-1);
+            border: 1px solid var(--td-border-level-1-color);
+        }
+
+        .control-group {
             display: grid;
-            grid-template-columns: 80px repeat(7, 1fr);
-            grid-template-rows: 60px repeat(12, 1fr);
-            gap: 1px;
-            background-color: #f0f0f0;
-            min-height: 800px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
         }
-        
-        .time-cell {
-            background-color: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #666;
-            border-right: 2px solid #e0e0e0;
-        }
-        
-        .day-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 16px;
-        }
-        
-        .schedule-cell {
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .schedule-cell:hover {
-            background-color: #f0f8ff;
-            border-color: #4facfe;
-        }
-        
-        .course-card {
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            right: 2px;
-            bottom: 2px;
-            border-radius: 8px;
-            padding: 8px;
-            color: white;
-            font-size: 12px;
+
+        .form-group {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: var(--td-text-color-primary);
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        .form-control {
+            height: 40px;
+            padding: 8px 12px;
+            border: 1px solid var(--td-border-level-1-color);
+            border-radius: var(--td-radius-medium);
+            font-size: 14px;
+            color: var(--td-text-color-primary);
+            background-color: var(--td-bg-color-container);
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+            outline: none;
+        }
+
+        .form-control:hover {
+            border-color: var(--td-brand-color-7);
+        }
+
+        .form-control:focus {
+            border-color: var(--td-brand-color-7);
+            box-shadow: 0 0 0 2px var(--td-brand-color-2);
+        }
+
+        .form-control::placeholder {
+            color: var(--td-text-color-placeholder);
+        }
+
+        .btn {
+            height: 40px;
+            padding: 0 16px;
+            border: 1px solid transparent;
+            border-radius: var(--td-radius-medium);
+            font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+            user-select: none;
         }
-        
-        .course-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+
+        .btn-primary {
+            background-color: var(--td-brand-color-7);
+            border-color: var(--td-brand-color-7);
+            color: white;
         }
-        
+
+        .btn-primary:hover {
+            background-color: var(--td-brand-color-6);
+            border-color: var(--td-brand-color-6);
+            box-shadow: var(--td-shadow-1);
+        }
+
+        .btn-primary:active {
+            background-color: var(--td-brand-color-8);
+            border-color: var(--td-brand-color-8);
+        }
+
+        .btn-danger {
+            background-color: var(--td-error-color);
+            border-color: var(--td-error-color);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c44236;
+            border-color: #c44236;
+            box-shadow: var(--td-shadow-1);
+        }
+
+        .btn-danger:active {
+            background-color: #b73e32;
+            border-color: #b73e32;
+        }
+
+        .btn-actions {
+            display: flex;
+            gap: 12px;
+            grid-column: 1 / -1;
+            justify-content: flex-start;
+        }
+
+        .schedule-container {
+            background: var(--td-bg-color-container);
+            border-radius: var(--td-radius-large);
+            box-shadow: var(--td-shadow-1);
+            border: 1px solid var(--td-border-level-1-color);
+            overflow: hidden;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--td-bg-color-container);
+        }
+
+        .schedule-table th {
+            background-color: var(--td-brand-color-1);
+            color: var(--td-brand-color-8);
+            padding: 16px 12px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            border-bottom: 1px solid var(--td-border-level-1-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .schedule-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--td-border-level-1-color);
+            border-right: 1px solid var(--td-border-level-1-color);
+            vertical-align: top;
+            min-height: 80px;
+            position: relative;
+        }
+
+        .schedule-table td:last-child {
+            border-right: none;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .time-slot {
+            background-color: var(--td-bg-color-container-hover);
+            font-weight: 500;
+            color: var(--td-text-color-primary);
+            font-size: 12px;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .course-item {
+            background: var(--td-brand-color-1);
+            border: 1px solid var(--td-brand-color-3);
+            color: var(--td-brand-color-8);
+            padding: 8px 10px;
+            border-radius: var(--td-radius-medium);
+            margin: 4px 0;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+            position: relative;
+            text-align: left;
+        }
+
+        .course-item:hover {
+            background: var(--td-brand-color-2);
+            border-color: var(--td-brand-color-4);
+            box-shadow: var(--td-shadow-1);
+            transform: translateY(-1px);
+        }
+
+        .course-item:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
         .course-name {
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 4px;
+            color: var(--td-brand-color-8);
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        
-        .course-info {
-            font-size: 10px;
-            opacity: 0.9;
+
+        .course-teacher {
+            font-size: 11px;
+            color: var(--td-text-color-secondary);
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
-        
-        /* 学科颜色 */
-        .subject-math { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
-        .subject-chinese { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
-        .subject-english { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
-        .subject-physics { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .subject-chemistry { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-        .subject-biology { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .subject-other { background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%); }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .schedule-grid {
-                grid-template-columns: 60px repeat(7, 1fr);
-                gap: 0.5px;
-                min-height: 600px;
+
+        .course-location {
+            font-size: 11px;
+            color: var(--td-text-color-secondary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .empty-slot {
+            color: var(--td-text-color-placeholder);
+            font-size: 12px;
+            padding: 20px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: var(--td-bg-color-container);
+            margin: 10% auto;
+            padding: 24px;
+            border-radius: var(--td-radius-large);
+            width: 90%;
+            max-width: 480px;
+            box-shadow: var(--td-shadow-3);
+            border: 1px solid var(--td-border-level-1-color);
+            animation: modalSlideIn 0.3s cubic-bezier(0.38, 0, 0.24, 1);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-32px);
+                opacity: 0;
             }
-            
-            .course-card {
-                padding: 4px;
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--td-border-level-1-color);
+        }
+
+        .modal-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--td-text-color-primary);
+            margin: 0;
+        }
+
+        .close {
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: none;
+            color: var(--td-text-color-secondary);
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: var(--td-radius-small);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+        }
+
+        .close:hover {
+            background-color: var(--td-bg-color-container-hover);
+            color: var(--td-text-color-primary);
+        }
+
+        .modal-body {
+            margin-bottom: 24px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--td-border-level-1-color);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--td-bg-color-container);
+            padding: 20px 16px;
+            border-radius: var(--td-radius-large);
+            text-align: center;
+            box-shadow: var(--td-shadow-1);
+            border: 1px solid var(--td-border-level-1-color);
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+        }
+
+        .stat-card:hover {
+            box-shadow: var(--td-shadow-2);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--td-brand-color-7);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            color: var(--td-text-color-secondary);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+
+            .header {
+                padding: 24px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .controls {
+                padding: 20px;
+            }
+
+            .control-group {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .btn-actions {
+                grid-template-columns: 1fr 1fr;
+                display: grid;
+            }
+
+            .schedule-table {
+                font-size: 12px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 8px 4px;
+            }
+
+            .course-item {
+                font-size: 11px;
+                padding: 6px 8px;
+            }
+
+            .course-name {
+                font-size: 11px;
+            }
+
+            .course-teacher,
+            .course-location {
                 font-size: 10px;
             }
-            
-            .course-name {
-                margin-bottom: 2px;
+
+            .modal-content {
+                margin: 20% auto;
+                padding: 20px;
             }
-            
-            .course-info {
-                font-size: 8px;
+
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
             }
-        }
-        
-        .floating-add-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
+
+            .stat-card {
+                padding: 16px 12px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .stat-label {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="app">
-        <!-- 头部标题 -->
-        <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 shadow-lg">
-            <h1 class="text-3xl font-bold text-center mb-2">📚 在线课表管理系统</h1>
-            <p class="text-center text-blue-100">轻松管理您的学习时间</p>
+    <div class="container">
+        <!-- 页面头部 -->
+        <div class="header">
+            <div class="header-icon">📚</div>
+            <h1>在线课表管理系统</h1>
+            <p>基于 TDesign 设计语言的智能化课程安排工具</p>
         </div>
-        
-        <!-- 操作按钮栏 -->
-        <div class="bg-white p-4 shadow-sm border-b flex justify-between items-center">
-            <div class="flex space-x-4">
-                <t-button theme="primary" @click="showAddDialog = true">
-                    ➕ 添加课程
-                </t-button>
-                <t-button theme="default" @click="clearAllCourses">
-                    🗑️ 清空课表
-                </t-button>
-                <t-button theme="success" @click="exportData">
-                    📁 导出数据
-                </t-button>
-            </div>
-            <div class="text-sm text-gray-600">
-                提示：双击空白格快速添加课程
-            </div>
-        </div>
-        
-        <!-- 课表网格 -->
-        <div class="p-4 bg-gray-50">
-            <div class="schedule-grid bg-white rounded-lg shadow-lg overflow-hidden">
-                <!-- 左上角空白 -->
-                <div class="bg-gray-100"></div>
-                
-                <!-- 星期标题 -->
-                <div v-for="day in weekDays" :key="day" class="day-header">
-                    {{ day }}
+
+        <!-- 统计信息 -->
+        <div class="controls">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalCourses">0</div>
+                    <div class="stat-label">总课程数</div>
                 </div>
-                
-                <!-- 时间轴和课程格子 -->
-                <template v-for="(timeSlot, timeIndex) in timeSlots" :key="timeIndex">
-                    <!-- 时间标签 -->
-                    <div class="time-cell">{{ timeSlot }}</div>
-                    
-                    <!-- 每天的课程格子 -->
-                    <div 
-                        v-for="(day, dayIndex) in 7" 
-                        :key="`${timeIndex}-${dayIndex}`"
-                        class="schedule-cell"
-                        @dblclick="quickAddCourse(dayIndex + 1, timeIndex)"
-                    >
-                        <!-- 课程卡片 -->
-                        <div 
-                            v-if="getCourseAtTime(dayIndex + 1, timeIndex)"
-                            class="course-card"
-                            :class="getSubjectClass(getCourseAtTime(dayIndex + 1, timeIndex).subject)"
-                            @click="editCourse(getCourseAtTime(dayIndex + 1, timeIndex))"
-                        >
-                            <div class="course-name">
-                                {{ getCourseAtTime(dayIndex + 1, timeIndex).name }}
-                            </div>
-                            <div class="course-info">
-                                📍 {{ getCourseAtTime(dayIndex + 1, timeIndex).location }}
-                            </div>
-                            <div class="course-info">
-                                👨‍🏫 {{ getCourseAtTime(dayIndex + 1, timeIndex).teacher }}
-                            </div>
-                        </div>
-                    </div>
-                </template>
+                <div class="stat-card">
+                    <div class="stat-number" id="todayCourses">0</div>
+                    <div class="stat-label">今日课程</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="weekCourses">0</div>
+                    <div class="stat-label">本周课程</div>
+                </div>
+            </div>
+
+            <!-- 课程添加表单 -->
+            <div class="control-group">
+                <div class="form-group">
+                    <label for="courseName">课程名称</label>
+                    <input type="text" id="courseName" class="form-control" placeholder="请输入课程名称">
+                </div>
+                <div class="form-group">
+                    <label for="teacher">授课教师</label>
+                    <input type="text" id="teacher" class="form-control" placeholder="请输入教师姓名">
+                </div>
+                <div class="form-group">
+                    <label for="location">上课地点</label>
+                    <input type="text" id="location" class="form-control" placeholder="请输入教室位置">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group">
+                    <label for="dayOfWeek">星期</label>
+                    <select id="dayOfWeek" class="form-control">
+                        <option value="1">星期一</option>
+                        <option value="2">星期二</option>
+                        <option value="3">星期三</option>
+                        <option value="4">星期四</option>
+                        <option value="5">星期五</option>
+                        <option value="6">星期六</option>
+                        <option value="7">星期日</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="timeSlot">时间段</label>
+                    <select id="timeSlot" class="form-control">
+                        <option value="1">第1-2节 (08:00-09:40)</option>
+                        <option value="2">第3-4节 (10:00-11:40)</option>
+                        <option value="3">第5-6节 (14:00-15:40)</option>
+                        <option value="4">第7-8节 (16:00-17:40)</option>
+                        <option value="5">第9-10节 (19:00-20:40)</option>
+                    </select>
+                </div>
+            <div class="btn-actions">
+                <button class="btn btn-primary" onclick="addCourse()">
+                    <span>➕</span>
+                    添加课程
+                </button>
+                <button class="btn btn-danger" onclick="clearSchedule()">
+                    <span>🗑️</span>
+                    清空课表
+                </button>
+            </div>
             </div>
         </div>
-        
-        <!-- 添加/编辑课程对话框 -->
-        <t-dialog 
-            v-model:visible="showAddDialog" 
-            :header="isEditMode ? '编辑课程' : '添加课程'"
-            width="500px"
-            @confirm="saveCourse"
-            @cancel="resetForm"
-        >
-            <t-form ref="courseForm" :data="courseForm" layout="vertical">
-                <t-form-item label="课程名称" name="name">
-                    <t-input v-model="courseForm.name" placeholder="请输入课程名称" />
-                </t-form-item>
-                
-                <t-form-item label="学科类型" name="subject">
-                    <t-select v-model="courseForm.subject" placeholder="请选择学科类型">
-                        <t-option 
-                            v-for="subject in subjects" 
-                            :key="subject.value" 
-                            :value="subject.value" 
-                            :label="subject.label"
-                        />
-                    </t-select>
-                </t-form-item>
-                
-                <t-form-item label="教师姓名" name="teacher">
-                    <t-input v-model="courseForm.teacher" placeholder="请输入教师姓名" />
-                </t-form-item>
-                
-                <t-form-item label="上课地点" name="location">
-                    <t-input v-model="courseForm.location" placeholder="请输入上课地点" />
-                </t-form-item>
-                
-                <t-form-item label="星期" name="dayOfWeek">
-                    <t-select v-model="courseForm.dayOfWeek" placeholder="请选择星期">
-                        <t-option 
-                            v-for="(day, index) in weekDays" 
-                            :key="index + 1" 
-                            :value="index + 1" 
-                            :label="day"
-                        />
-                    </t-select>
-                </t-form-item>
-                
-                <t-form-item label="开始时间" name="startTime">
-                    <t-select v-model="courseForm.startTime" placeholder="请选择开始时间">
-                        <t-option 
-                            v-for="(time, index) in timeSlots" 
-                            :key="index" 
-                            :value="index" 
-                            :label="time"
-                        />
-                    </t-select>
-                </t-form-item>
-                
-                <t-form-item label="结束时间" name="endTime">
-                    <t-select v-model="courseForm.endTime" placeholder="请选择结束时间">
-                        <t-option 
-                            v-for="(time, index) in timeSlots" 
-                            :key="index" 
-                            :value="index" 
-                            :label="time"
-                            :disabled="index <= courseForm.startTime"
-                        />
-                    </t-select>
-                </t-form-item>
-            </t-form>
-            
-            <!-- 编辑模式下显示删除按钮 -->
-            <div v-if="isEditMode" class="mt-4 flex justify-between">
-                <t-button theme="danger" @click="deleteCourse">
-                    🗑️ 删除课程
-                </t-button>
+
+        <!-- 课表主体 -->
+        <div class="schedule-container">
+            <table class="schedule-table" id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>星期一</th>
+                        <th>星期二</th>
+                        <th>星期三</th>
+                        <th>星期四</th>
+                        <th>星期五</th>
+                        <th>星期六</th>
+                        <th>星期日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-slot">第1-2节<br>08:00-09:40</td>
+                        <td class="empty-slot" data-day="1" data-time="1">暂无课程</td>
+                        <td class="empty-slot" data-day="2" data-time="1">暂无课程</td>
+                        <td class="empty-slot" data-day="3" data-time="1">暂无课程</td>
+                        <td class="empty-slot" data-day="4" data-time="1">暂无课程</td>
+                        <td class="empty-slot" data-day="5" data-time="1">暂无课程</td>
+                        <td class="empty-slot" data-day="6" data-time="1">暂无课程</td>
+                        <td class="empty-slot" data-day="7" data-time="1">暂无课程</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第3-4节<br>10:00-11:40</td>
+                        <td class="empty-slot" data-day="1" data-time="2">暂无课程</td>
+                        <td class="empty-slot" data-day="2" data-time="2">暂无课程</td>
+                        <td class="empty-slot" data-day="3" data-time="2">暂无课程</td>
+                        <td class="empty-slot" data-day="4" data-time="2">暂无课程</td>
+                        <td class="empty-slot" data-day="5" data-time="2">暂无课程</td>
+                        <td class="empty-slot" data-day="6" data-time="2">暂无课程</td>
+                        <td class="empty-slot" data-day="7" data-time="2">暂无课程</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第5-6节<br>14:00-15:40</td>
+                        <td class="empty-slot" data-day="1" data-time="3">暂无课程</td>
+                        <td class="empty-slot" data-day="2" data-time="3">暂无课程</td>
+                        <td class="empty-slot" data-day="3" data-time="3">暂无课程</td>
+                        <td class="empty-slot" data-day="4" data-time="3">暂无课程</td>
+                        <td class="empty-slot" data-day="5" data-time="3">暂无课程</td>
+                        <td class="empty-slot" data-day="6" data-time="3">暂无课程</td>
+                        <td class="empty-slot" data-day="7" data-time="3">暂无课程</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第7-8节<br>16:00-17:40</td>
+                        <td class="empty-slot" data-day="1" data-time="4">暂无课程</td>
+                        <td class="empty-slot" data-day="2" data-time="4">暂无课程</td>
+                        <td class="empty-slot" data-day="3" data-time="4">暂无课程</td>
+                        <td class="empty-slot" data-day="4" data-time="4">暂无课程</td>
+                        <td class="empty-slot" data-day="5" data-time="4">暂无课程</td>
+                        <td class="empty-slot" data-day="6" data-time="4">暂无课程</td>
+                        <td class="empty-slot" data-day="7" data-time="4">暂无课程</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第9-10节<br>19:00-20:40</td>
+                        <td class="empty-slot" data-day="1" data-time="5">暂无课程</td>
+                        <td class="empty-slot" data-day="2" data-time="5">暂无课程</td>
+                        <td class="empty-slot" data-day="3" data-time="5">暂无课程</td>
+                        <td class="empty-slot" data-day="4" data-time="5">暂无课程</td>
+                        <td class="empty-slot" data-day="5" data-time="5">暂无课程</td>
+                        <td class="empty-slot" data-day="6" data-time="5">暂无课程</td>
+                        <td class="empty-slot" data-day="7" data-time="5">暂无课程</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 课程详情模态框 -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">课程详情</h3>
+                <button class="close" onclick="closeModal()">&times;</button>
             </div>
-        </t-dialog>
-        
-        <!-- 浮动添加按钮 -->
-        <t-button 
-            class="floating-add-btn" 
-            theme="primary" 
-            shape="circle" 
-            size="large"
-            @click="showAddDialog = true"
-        >
-            ➕
-        </t-button>
+            <div class="modal-body">
+                <div id="modalContent"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" onclick="deleteCourse()">删除课程</button>
+            </div>
+        </div>
     </div>
 
     <script>
-        const { createApp } = Vue;
-        const { MessagePlugin } = TDesign;
-        
-        createApp({
-            setup() {
-                // 响应式数据定义
-                const showAddDialog = Vue.ref(false);
-                const isEditMode = Vue.ref(false);
-                const currentEditId = Vue.ref(null);
-                const courses = Vue.ref([]);
-                
-                // 星期数据
-                const weekDays = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
-                
-                // 时间段数据 (8:00-20:00)
-                const timeSlots = [
-                    '08:00', '09:00', '10:00', '11:00', '12:00', '13:00',
-                    '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'
-                ];
-                
-                // 学科类型数据
-                const subjects = [
-                    { label: '📊 数学', value: 'math' },
-                    { label: '📝 语文', value: 'chinese' },
-                    { label: '🌍 英语', value: 'english' },
-                    { label: '⚡ 物理', value: 'physics' },
-                    { label: '🧪 化学', value: 'chemistry' },
-                    { label: '🧬 生物', value: 'biology' },
-                    { label: '📚 其他', value: 'other' }
-                ];
-                
-                // 课程表单数据
-                const courseForm = Vue.ref({
-                    name: '',
-                    subject: '',
-                    teacher: '',
-                    location: '',
-                    dayOfWeek: null,
-                    startTime: null,
-                    endTime: null
-                });
-                
-                /**
-                 * 根据学科类型获取CSS类名
-                 * @param {string} subject - 学科类型
-                 * @return {string} CSS类名
-                 */
-                const getSubjectClass = (subject) => {
-                    return `subject-${subject}`;
-                };
-                
-                /**
-                 * 获取指定时间和星期的课程
-                 * @param {number} dayOfWeek - 星期几 (1-7)
-                 * @param {number} timeIndex - 时间索引
-                 * @return {Object|null} 课程对象或null
-                 */
-                const getCourseAtTime = (dayOfWeek, timeIndex) => {
-                    return courses.value.find(course => 
-                        course.dayOfWeek === dayOfWeek && 
-                        course.startTime <= timeIndex && 
-                        course.endTime > timeIndex
-                    );
-                };
-                
-                /**
-                 * 检查时间冲突
-                 * @param {Object} newCourse - 新课程对象
-                 * @param {string} excludeId - 排除的课程ID (编辑时使用)
-                 * @return {boolean} 是否存在冲突
-                 */
-                const checkTimeConflict = (newCourse, excludeId = null) => {
-                    return courses.value.some(course => {
-                        if (course.id === excludeId) return false;
-                        
-                        return course.dayOfWeek === newCourse.dayOfWeek &&
-                               ((newCourse.startTime >= course.startTime && newCourse.startTime < course.endTime) ||
-                                (newCourse.endTime > course.startTime && newCourse.endTime <= course.endTime) ||
-                                (newCourse.startTime <= course.startTime && newCourse.endTime >= course.endTime));
-                    });
-                };
-                
-                /**
-                 * 快速添加课程 (双击空白格)
-                 * @param {number} dayOfWeek - 星期几
-                 * @param {number} timeIndex - 时间索引
-                 */
-                const quickAddCourse = (dayOfWeek, timeIndex) => {
-                    // 检查该时间段是否已有课程
-                    if (getCourseAtTime(dayOfWeek, timeIndex)) {
-                        MessagePlugin.warning('该时间段已有课程，请选择其他时间');
-                        return;
-                    }
-                    
-                    // 预填表单数据
-                    courseForm.value = {
-                        name: '',
-                        subject: '',
-                        teacher: '',
-                        location: '',
-                        dayOfWeek: dayOfWeek,
-                        startTime: timeIndex,
-                        endTime: timeIndex + 1
-                    };
-                    
-                    isEditMode.value = false;
-                    showAddDialog.value = true;
-                };
-                
-                /**
-                 * 编辑课程
-                 * @param {Object} course - 课程对象
-                 */
-                const editCourse = (course) => {
-                    courseForm.value = { ...course };
-                    currentEditId.value = course.id;
-                    isEditMode.value = true;
-                    showAddDialog.value = true;
-                };
-                
-                /**
-                 * 保存课程 (添加或编辑)
-                 */
-                const saveCourse = () => {
-                    // 表单验证
-                    if (!courseForm.value.name.trim()) {
-                        MessagePlugin.error('请输入课程名称');
-                        return;
-                    }
-                    
-                    if (!courseForm.value.subject) {
-                        MessagePlugin.error('请选择学科类型');
-                        return;
-                    }
-                    
-                    if (courseForm.value.dayOfWeek === null) {
-                        MessagePlugin.error('请选择星期');
-                        return;
-                    }
-                    
-                    if (courseForm.value.startTime === null || courseForm.value.endTime === null) {
-                        MessagePlugin.error('请选择时间');
-                        return;
-                    }
-                    
-                    if (courseForm.value.startTime >= courseForm.value.endTime) {
-                        MessagePlugin.error('结束时间必须大于开始时间');
-                        return;
-                    }
-                    
-                    // 检查时间冲突
-                    if (checkTimeConflict(courseForm.value, currentEditId.value)) {
-                        MessagePlugin.error('时间冲突，请选择其他时间段');
-                        return;
-                    }
-                    
-                    if (isEditMode.value) {
-                        // 编辑模式：更新现有课程
-                        const index = courses.value.findIndex(c => c.id === currentEditId.value);
-                        if (index !== -1) {
-                            courses.value[index] = { ...courseForm.value, id: currentEditId.value };
-                            MessagePlugin.success('课程更新成功！');
-                        }
-                    } else {
-                        // 添加模式：创建新课程
-                        const newCourse = {
-                            ...courseForm.value,
-                            id: Date.now().toString() // 使用时间戳作为唯一ID
-                        };
-                        courses.value.push(newCourse);
-                        MessagePlugin.success('课程添加成功！');
-                    }
-                    
-                    // 保存到本地存储
-                    saveToLocalStorage();
-                    
-                    // 关闭对话框并重置表单
-                    showAddDialog.value = false;
-                    resetForm();
-                };
-                
-                /**
-                 * 删除课程
-                 */
-                const deleteCourse = () => {
-                    const index = courses.value.findIndex(c => c.id === currentEditId.value);
-                    if (index !== -1) {
-                        courses.value.splice(index, 1);
-                        saveToLocalStorage();
-                        MessagePlugin.success('课程删除成功！');
-                        showAddDialog.value = false;
-                        resetForm();
-                    }
-                };
-                
-                /**
-                 * 重置表单
-                 */
-                const resetForm = () => {
-                    courseForm.value = {
-                        name: '',
-                        subject: '',
-                        teacher: '',
-                        location: '',
-                        dayOfWeek: null,
-                        startTime: null,
-                        endTime: null
-                    };
-                    isEditMode.value = false;
-                    currentEditId.value = null;
-                };
-                
-                /**
-                 * 清空所有课程
-                 */
-                const clearAllCourses = () => {
-                    if (confirm('确定要清空所有课程吗？此操作不可恢复。')) {
-                        courses.value = [];
-                        saveToLocalStorage();
-                        MessagePlugin.success('课表已清空');
-                    }
-                };
-                
-                /**
-                 * 导出数据
-                 */
-                const exportData = () => {
-                    const dataStr = JSON.stringify(courses.value, null, 2);
-                    const dataBlob = new Blob([dataStr], { type: 'application/json' });
-                    const url = URL.createObjectURL(dataBlob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = `课表数据_${new Date().toISOString().slice(0, 10)}.json`;
-                    link.click();
-                    URL.revokeObjectURL(url);
-                    MessagePlugin.success('数据导出成功！');
-                };
-                
-                /**
-                 * 保存数据到本地存储
-                 */
-                const saveToLocalStorage = () => {
-                    localStorage.setItem('schedule-courses', JSON.stringify(courses.value));
-                };
-                
-                /**
-                 * 从本地存储加载数据
-                 */
-                const loadFromLocalStorage = () => {
-                    const saved = localStorage.getItem('schedule-courses');
-                    if (saved) {
-                        try {
-                            courses.value = JSON.parse(saved);
-                        } catch (error) {
-                            console.error('加载本地数据失败:', error);
-                            MessagePlugin.error('加载本地数据失败');
-                        }
-                    }
-                };
-                
-                // 组件挂载时加载数据
-                Vue.onMounted(() => {
-                    loadFromLocalStorage();
-                });
-                
-                // 返回所有响应式数据和方法
-                return {
-                    // 响应式数据
-                    showAddDialog,
-                    isEditMode,
-                    courses,
-                    courseForm,
-                    weekDays,
-                    timeSlots,
-                    subjects,
-                    
-                    // 方法
-                    getSubjectClass,
-                    getCourseAtTime,
-                    quickAddCourse,
-                    editCourse,
-                    saveCourse,
-                    deleteCourse,
-                    resetForm,
-                    clearAllCourses,
-                    exportData
-                };
+        // 课程数据存储
+        let courses = JSON.parse(localStorage.getItem('courses')) || [];
+        let currentCourse = null;
+
+        /**
+         * 页面加载完成后初始化
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSchedule();
+            updateStats();
+        });
+
+        /**
+         * 添加新课程
+         */
+        function addCourse() {
+            const courseName = document.getElementById('courseName').value.trim();
+            const teacher = document.getElementById('teacher').value.trim();
+            const location = document.getElementById('location').value.trim();
+            const dayOfWeek = parseInt(document.getElementById('dayOfWeek').value);
+            const timeSlot = parseInt(document.getElementById('timeSlot').value);
+
+            // 表单验证
+            if (!courseName) {
+                alert('请输入课程名称！');
+                return;
             }
-        }).use(TDesign).mount('#app');
+
+            // 检查时间冲突
+            const existingCourse = courses.find(course => 
+                course.dayOfWeek === dayOfWeek && course.timeSlot === timeSlot
+            );
+
+            if (existingCourse) {
+                if (!confirm('该时间段已有课程，是否覆盖？')) {
+                    return;
+                }
+                // 删除原有课程
+                courses = courses.filter(course => 
+                    !(course.dayOfWeek === dayOfWeek && course.timeSlot === timeSlot)
+                );
+            }
+
+            // 创建新课程对象
+            const newCourse = {
+                id: Date.now(),
+                courseName,
+                teacher: teacher || '未指定',
+                location: location || '未指定',
+                dayOfWeek,
+                timeSlot,
+                createTime: new Date().toISOString()
+            };
+
+            // 添加到课程列表
+            courses.push(newCourse);
+            
+            // 保存到本地存储
+            saveCourses();
+            
+            // 重新加载课表
+            loadSchedule();
+            updateStats();
+            
+            // 清空表单
+            clearForm();
+            
+            // 显示成功消息
+            showMessage('课程添加成功！', 'success');
+        }
+
+        /**
+         * 加载课表数据到页面
+         */
+        function loadSchedule() {
+            // 清空所有课程格子
+            const cells = document.querySelectorAll('[data-day][data-time]');
+            cells.forEach(cell => {
+                cell.innerHTML = '暂无课程';
+                cell.className = 'empty-slot';
+            });
+
+            // 填充课程数据
+            courses.forEach(course => {
+                const cell = document.querySelector(`[data-day="${course.dayOfWeek}"][data-time="${course.timeSlot}"]`);
+                if (cell) {
+                    cell.innerHTML = `
+                        <div class="course-item" onclick="showCourseDetail(${course.id})">
+                            <div class="course-name">${course.courseName}</div>
+                            <div class="course-teacher">👨‍🏫 ${course.teacher}</div>
+                            <div class="course-location">📍 ${course.location}</div>
+                        </div>
+                    `;
+                    cell.className = '';
+                }
+            });
+        }
+
+        /**
+         * 显示课程详情模态框
+         * @param {number} courseId - 课程ID
+         */
+        function showCourseDetail(courseId) {
+            const course = courses.find(c => c.id === courseId);
+            if (!course) return;
+
+            currentCourse = course;
+            
+            const modal = document.getElementById('courseModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.textContent = course.courseName;
+            modalContent.innerHTML = `
+                 <div style="line-height: 1.6; font-size: 14px; color: var(--td-text-color-primary);">
+                     <div style="margin-bottom: 12px; padding: 12px; background: var(--td-bg-color-container-hover); border-radius: var(--td-radius-medium);">
+                         <div style="color: var(--td-text-color-secondary); font-size: 12px; margin-bottom: 4px;">👨‍🏫 授课教师</div>
+                         <div style="font-weight: 500;">${course.teacher}</div>
+                     </div>
+                     <div style="margin-bottom: 12px; padding: 12px; background: var(--td-bg-color-container-hover); border-radius: var(--td-radius-medium);">
+                         <div style="color: var(--td-text-color-secondary); font-size: 12px; margin-bottom: 4px;">📍 上课地点</div>
+                         <div style="font-weight: 500;">${course.location}</div>
+                     </div>
+                     <div style="margin-bottom: 12px; padding: 12px; background: var(--td-bg-color-container-hover); border-radius: var(--td-radius-medium);">
+                         <div style="color: var(--td-text-color-secondary); font-size: 12px; margin-bottom: 4px;">📅 上课时间</div>
+                         <div style="font-weight: 500;">${getDayName(course.dayOfWeek)} ${getTimeName(course.timeSlot)}</div>
+                     </div>
+                     <div style="padding: 12px; background: var(--td-bg-color-container-hover); border-radius: var(--td-radius-medium);">
+                         <div style="color: var(--td-text-color-secondary); font-size: 12px; margin-bottom: 4px;">🕒 创建时间</div>
+                         <div style="font-weight: 500;">${new Date(course.createTime).toLocaleString()}</div>
+                     </div>
+                 </div>
+             `;
+
+            modal.style.display = 'block';
+        }
+
+        /**
+         * 关闭模态框
+         */
+        function closeModal() {
+            document.getElementById('courseModal').style.display = 'none';
+            currentCourse = null;
+        }
+
+        /**
+         * 删除当前查看的课程
+         */
+        function deleteCourse() {
+            if (!currentCourse) return;
+
+            if (confirm(`确定要删除课程「${currentCourse.courseName}」吗？`)) {
+                courses = courses.filter(course => course.id !== currentCourse.id);
+                saveCourses();
+                loadSchedule();
+                updateStats();
+                closeModal();
+                showMessage('课程删除成功！', 'success');
+            }
+        }
+
+        /**
+         * 清空整个课表
+         */
+        function clearSchedule() {
+            if (courses.length === 0) {
+                alert('课表已经是空的了！');
+                return;
+            }
+
+            if (confirm('确定要清空整个课表吗？此操作不可恢复！')) {
+                courses = [];
+                saveCourses();
+                loadSchedule();
+                updateStats();
+                showMessage('课表已清空！', 'success');
+            }
+        }
+
+        /**
+         * 更新统计信息
+         */
+        function updateStats() {
+            const totalCourses = courses.length;
+            const today = new Date().getDay() || 7; // 将周日从0转换为7
+            const todayCourses = courses.filter(course => course.dayOfWeek === today).length;
+            const weekCourses = courses.length; // 所有课程都是本周的
+
+            document.getElementById('totalCourses').textContent = totalCourses;
+            document.getElementById('todayCourses').textContent = todayCourses;
+            document.getElementById('weekCourses').textContent = weekCourses;
+        }
+
+        /**
+         * 保存课程数据到本地存储
+         */
+        function saveCourses() {
+            localStorage.setItem('courses', JSON.stringify(courses));
+        }
+
+        /**
+         * 清空表单
+         */
+        function clearForm() {
+            document.getElementById('courseName').value = '';
+            document.getElementById('teacher').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('dayOfWeek').selectedIndex = 0;
+            document.getElementById('timeSlot').selectedIndex = 0;
+        }
+
+        /**
+         * 获取星期名称
+         * @param {number} day - 星期数字 (1-7)
+         * @returns {string} 星期名称
+         */
+        function getDayName(day) {
+            const days = ['', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'];
+            return days[day] || '未知';
+        }
+
+        /**
+         * 获取时间段名称
+         * @param {number} time - 时间段数字 (1-5)
+         * @returns {string} 时间段名称
+         */
+        function getTimeName(time) {
+            const times = {
+                1: '第1-2节 (08:00-09:40)',
+                2: '第3-4节 (10:00-11:40)',
+                3: '第5-6节 (14:00-15:40)',
+                4: '第7-8节 (16:00-17:40)',
+                5: '第9-10节 (19:00-20:40)'
+            };
+            return times[time] || '未知时间';
+        }
+
+        /**
+          * 显示消息提示
+          * @param {string} message - 消息内容
+          * @param {string} type - 消息类型 (success, error, warning)
+          */
+         function showMessage(message, type = 'success') {
+             // 创建消息元素
+             const messageEl = document.createElement('div');
+             messageEl.style.cssText = `
+                 position: fixed;
+                 top: 24px;
+                 right: 24px;
+                 padding: 12px 16px;
+                 border-radius: var(--td-radius-medium);
+                 font-size: 14px;
+                 font-weight: 500;
+                 z-index: 10000;
+                 animation: slideInRight 0.3s cubic-bezier(0.38, 0, 0.24, 1);
+                 box-shadow: var(--td-shadow-2);
+                 border: 1px solid;
+                 display: flex;
+                 align-items: center;
+                 gap: 8px;
+                 max-width: 320px;
+             `;
+
+             // 根据类型设置样式
+             const styles = {
+                 success: {
+                     background: 'var(--td-bg-color-container)',
+                     color: 'var(--td-success-color)',
+                     borderColor: 'var(--td-success-color)',
+                     icon: '✓'
+                 },
+                 error: {
+                     background: 'var(--td-bg-color-container)',
+                     color: 'var(--td-error-color)',
+                     borderColor: 'var(--td-error-color)',
+                     icon: '✕'
+                 },
+                 warning: {
+                     background: 'var(--td-bg-color-container)',
+                     color: 'var(--td-warning-color)',
+                     borderColor: 'var(--td-warning-color)',
+                     icon: '⚠'
+                 }
+             };
+             
+             const style = styles[type] || styles.success;
+             messageEl.style.background = style.background;
+             messageEl.style.color = style.color;
+             messageEl.style.borderColor = style.borderColor;
+             messageEl.innerHTML = `<span style="font-size: 16px;">${style.icon}</span><span>${message}</span>`;
+
+             // 添加动画样式
+             const styleEl = document.createElement('style');
+             styleEl.textContent = `
+                 @keyframes slideInRight {
+                     from {
+                         transform: translateX(100%);
+                         opacity: 0;
+                     }
+                     to {
+                         transform: translateX(0);
+                         opacity: 1;
+                     }
+                 }
+             `;
+             document.head.appendChild(styleEl);
+
+             // 添加到页面
+             document.body.appendChild(messageEl);
+
+             // 3秒后自动移除
+             setTimeout(() => {
+                 messageEl.style.animation = 'slideInRight 0.3s cubic-bezier(0.38, 0, 0.24, 1) reverse';
+                 setTimeout(() => {
+                     if (messageEl.parentNode) {
+                         messageEl.parentNode.removeChild(messageEl);
+                     }
+                     if (styleEl.parentNode) {
+                         styleEl.parentNode.removeChild(styleEl);
+                     }
+                 }, 300);
+             }, 3000);
+         }
+
+        // 点击模态框外部关闭模态框
+        window.onclick = function(event) {
+            const modal = document.getElementById('courseModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // 键盘事件处理
+        document.addEventListener('keydown', function(event) {
+            // ESC键关闭模态框
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+            
+            // Enter键添加课程（当焦点在表单元素上时）
+            if (event.key === 'Enter' && event.target.classList.contains('form-control')) {
+                addCourse();
+            }
+        });
+
+        // 页面加载时显示欢迎消息
+         window.addEventListener('load', function() {
+             setTimeout(() => {
+                 showMessage('欢迎使用 TDesign 在线课表管理系统！', 'success');
+             }, 500);
+         });
     </script>
 </body>
 </html>

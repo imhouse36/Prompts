@@ -1,0 +1,120 @@
+<svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="restGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="375" height="812" fill="url(#restGradient)"/>
+  
+  <!-- 状态栏 -->
+  <rect width="375" height="44" fill="rgba(255,255,255,0.95)"/>
+  <text x="20" y="30" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">9:41</text>
+  <circle cx="331" cy="22" r="3" fill="#34C759"/>
+  <rect x="338" y="19" width="18" height="10" rx="2" fill="#000000"/>
+  <rect x="340" y="21" width="14" height="6" rx="1" fill="#FFFFFF"/>
+  
+  <!-- 顶部导航 -->
+  <rect y="44" width="375" height="60" fill="rgba(255,255,255,0.95)"/>
+  <text x="187.5" y="82" font-family="SF Pro Display" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">休息时间</text>
+  
+  <!-- 关闭按钮 -->
+  <circle cx="335" cy="74" r="15" fill="rgba(142,142,147,0.1)"/>
+  <line x1="330" y1="69" x2="340" y2="79" stroke="#8E8E93" stroke-width="2"/>
+  <line x1="340" y1="69" x2="330" y2="79" stroke="#8E8E93" stroke-width="2"/>
+  
+  <!-- 休息状态指示 -->
+  <rect y="104" width="375" height="60" fill="rgba(255,255,255,0.8)"/>
+  <circle cx="187.5" cy="134" r="25" fill="#4ECDC4" opacity="0.2"/>
+  <circle cx="187.5" cy="134" r="15" fill="#4ECDC4"/>
+  <text x="187.5" y="140" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">☕</text>
+  <text x="187.5" y="158" font-family="SF Pro Display" font-size="14" font-weight="500" fill="#4ECDC4" text-anchor="middle">短休息</text>
+  
+  <!-- 主计时器区域 -->
+  <rect y="164" width="375" height="350" fill="transparent"/>
+  
+  <!-- 休息图标 -->
+  <circle cx="187.5" cy="280" r="100" fill="#4ECDC4" opacity="0.1"/>
+  <circle cx="187.5" cy="280" r="70" fill="#4ECDC4" opacity="0.2"/>
+  <circle cx="187.5" cy="280" r="50" fill="#4ECDC4"/>
+  
+  <!-- 咖啡杯图标 -->
+  <rect x="167.5" y="260" width="25" height="30" rx="3" fill="#FFFFFF"/>
+  <rect x="170" y="263" width="20" height="24" rx="2" fill="#4ECDC4"/>
+  <ellipse cx="180" cy="275" rx="8" ry="3" fill="rgba(255,255,255,0.3)"/>
+  <path d="M192.5 270C197.5 270 200 273 200 278C200 283 197.5 286 192.5 286" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  
+  <!-- 蒸汽效果 -->
+  <path d="M175 255C175 255 175 250 177 250C179 250 179 255 179 255" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <path d="M180 253C180 253 180 248 182 248C184 248 184 253 184 253" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M185 255C185 255 185 250 187 250C189 250 189 255 189 255" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.7"/>
+  
+  <!-- 倒计时显示 -->
+  <text x="187.5" y="360" font-family="SF Pro Display" font-size="48" font-weight="300" fill="#4ECDC4" text-anchor="middle">04:32</text>
+  <text x="187.5" y="385" font-family="SF Pro Display" font-size="16" fill="#8E8E93" text-anchor="middle">放松一下，你已经很棒了！</text>
+  
+  <!-- 进度环 -->
+  <circle cx="187.5" cy="280" r="110" fill="none" stroke="rgba(78,205,196,0.2)" stroke-width="6"/>
+  <circle cx="187.5" cy="280" r="110" fill="none" stroke="#4ECDC4" stroke-width="6" stroke-dasharray="691.15" stroke-dashoffset="138.23" stroke-linecap="round" transform="rotate(-90 187.5 280)"/>
+  
+  <!-- 控制按钮区域 -->
+  <rect y="514" width="375" height="100" fill="transparent"/>
+  
+  <!-- 暂停/继续按钮 -->
+  <circle cx="187.5" cy="564" r="30" fill="rgba(78,205,196,0.1)" stroke="#4ECDC4" stroke-width="2"/>
+  <rect x="180" y="557" width="4" height="14" fill="#4ECDC4"/>
+  <rect x="191" y="557" width="4" height="14" fill="#4ECDC4"/>
+  
+  <!-- 跳过休息 -->
+  <circle cx="120" cy="564" r="25" fill="rgba(142,142,147,0.1)"/>
+  <path d="M113 559L127 564L113 569" fill="#8E8E93"/>
+  <line x1="127" y1="559" x2="127" y2="569" stroke="#8E8E93" stroke-width="2"/>
+  <text x="120" y="590" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">跳过</text>
+  
+  <!-- 延长休息 -->
+  <circle cx="255" cy="564" r="25" fill="rgba(142,142,147,0.1)"/>
+  <line x1="248" y1="564" x2="262" y2="564" stroke="#8E8E93" stroke-width="2"/>
+  <line x1="255" y1="557" x2="255" y2="571" stroke="#8E8E93" stroke-width="2"/>
+  <text x="255" y="590" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">延长</text>
+  
+  <!-- 休息建议卡片 -->
+  <rect y="614" width="375" height="120" fill="rgba(255,255,255,0.9)"/>
+  <text x="20" y="640" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">休息建议</text>
+  
+  <!-- 建议列表 -->
+  <rect x="20" y="650" width="335" height="75" rx="12" fill="#FFFFFF"/>
+  
+  <!-- 建议项1 -->
+  <circle cx="40" cy="670" r="8" fill="#4ECDC4"/>
+  <text x="40" y="675" font-family="SF Pro Display" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="60" y="675" font-family="SF Pro Display" font-size="14" fill="#000000">深呼吸 3-5 次，放松身心</text>
+  
+  <!-- 建议项2 -->
+  <circle cx="40" cy="690" r="8" fill="#FFD93D"/>
+  <text x="40" y="695" font-family="SF Pro Display" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="60" y="695" font-family="SF Pro Display" font-size="14" fill="#000000">站起来活动一下，缓解疲劳</text>
+  
+  <!-- 建议项3 -->
+  <circle cx="40" cy="710" r="8" fill="#FF6B6B"/>
+  <text x="40" y="715" font-family="SF Pro Display" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="60" y="715" font-family="SF Pro Display" font-size="14" fill="#000000">喝一杯水，保持身体水分</text>
+  
+  <!-- 下一个番茄预告 -->
+  <rect y="734" width="375" height="60" fill="rgba(255,255,255,0.8)"/>
+  <text x="20" y="755" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">下一个番茄</text>
+  <text x="20" y="775" font-family="SF Pro Display" font-size="12" fill="#8E8E93">学习新技术栈 - 预计 25 分钟</text>
+  
+  <!-- 进度指示器 -->
+  <rect x="280" y="745" width="75" height="20" rx="10" fill="rgba(78,205,196,0.1)"/>
+  <text x="317.5" y="758" font-family="SF Pro Display" font-size="10" fill="#4ECDC4" text-anchor="middle">第 2/4 个</text>
+  
+  <!-- 番茄进度点 -->
+  <circle cx="290" cy="770" r="4" fill="#4ECDC4"/>
+  <circle cx="305" cy="770" r="4" fill="#4ECDC4" opacity="0.3"/>
+  <circle cx="320" cy="770" r="4" fill="#E5E5EA"/>
+  <circle cx="335" cy="770" r="4" fill="#E5E5EA"/>
+  
+  <!-- Home Indicator -->
+  <rect x="150" y="795" width="75" height="4" rx="2" fill="#000000"/>
+</svg>

@@ -93,7 +93,7 @@ ALLOWED_ORIGINS=https://yourdomain.com
 
 ## 📁 项目结构（简化）
 ```
-server/
+Node/
 ├── src/
 │   ├── config/           # 配置管理
 │   │   ├── environment.js    # 环境检测

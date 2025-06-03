@@ -62,17 +62,18 @@ VITE_ALLOWED_ORIGINS=https://yourdomain.com
 
 ## 📁 项目结构（简化）
 ```
-src/
-├── components/          # 组件 (PascalCase命名)
-│   ├── base/           # 基础组件
-│   └── business/       # 业务组件
-├── composables/        # 组合式API (useXxx命名)
-├── config/            # 配置文件 (env.ts, api.ts)
-├── router/            # 路由配置
-├── stores/            # Pinia状态管理
-├── utils/             # 工具函数
-├── views/             # 页面组件
-└── types/             # TypeScript类型
+Vue/
+├── src/
+│    ├── components/          # 组件 (PascalCase命名)
+│    │   ├── base/           # 基础组件
+│    │   └── business/       # 业务组件
+│    ├── composables/        # 组合式API (useXxx命名)
+│    ├── config/            # 配置文件 (env.ts, api.ts)
+│    ├── router/            # 路由配置
+│    ├── stores/            # Pinia状态管理
+│    ├── utils/             # 工具函数
+│    ├── views/             # 页面组件
+│    └── types/             # TypeScript类型
 ```
 
 ## 🔧 核心编码规范

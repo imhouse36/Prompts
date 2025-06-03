@@ -1,0 +1,186 @@
+<svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="375" height="812" fill="#F8F9FA"/>
+  
+  <!-- 状态栏 -->
+  <rect width="375" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="SF Pro Display" font-size="14" font-weight="600" fill="#000000">9:41</text>
+  <circle cx="331" cy="22" r="3" fill="#34C759"/>
+  <rect x="338" y="19" width="18" height="10" rx="2" fill="#000000"/>
+  <rect x="340" y="21" width="14" height="6" rx="1" fill="#FFFFFF"/>
+  
+  <!-- 顶部导航 -->
+  <rect y="44" width="375" height="60" fill="#FFFFFF"/>
+  <text x="187.5" y="82" font-family="SF Pro Display" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">统计分析</text>
+  
+  <!-- 分享按钮 -->
+  <rect x="315" y="64" width="20" height="20" fill="none"/>
+  <path d="M325 67L330 72L325 77" stroke="#8E8E93" stroke-width="2" fill="none"/>
+  <circle cx="320" cy="72" r="2" fill="#8E8E93"/>
+  <line x1="322" y1="70" x2="328" y2="67" stroke="#8E8E93" stroke-width="1"/>
+  <line x1="322" y1="74" x2="328" y2="77" stroke="#8E8E93" stroke-width="1"/>
+  
+  <!-- 时间选择器 -->
+  <rect y="104" width="375" height="50" fill="#FFFFFF"/>
+  <rect x="20" y="119" width="60" height="30" rx="15" fill="#FF6B6B"/>
+  <text x="50" y="139" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#FFFFFF" text-anchor="middle">今日</text>
+  
+  <rect x="90" y="119" width="60" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="120" y="139" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">本周</text>
+  
+  <rect x="160" y="119" width="60" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="190" y="139" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">本月</text>
+  
+  <rect x="230" y="119" width="60" height="30" rx="15" fill="#F2F2F7"/>
+  <text x="260" y="139" font-family="SF Pro Display" font-size="12" font-weight="500" fill="#8E8E93" text-anchor="middle">本年</text>
+  
+  <!-- 今日概览 -->
+  <rect y="154" width="375" height="120" fill="#FFFFFF"/>
+  <text x="20" y="180" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">今日概览</text>
+  <text x="335" y="180" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="end">2024年3月15日</text>
+  
+  <!-- 概览卡片 -->
+  <rect x="20" y="190" width="100" height="70" rx="12" fill="#FFF5F5"/>
+  <text x="70" y="210" font-family="SF Pro Display" font-size="24" font-weight="600" fill="#FF6B6B" text-anchor="middle">6</text>
+  <text x="70" y="230" font-family="SF Pro Display" font-size="12" fill="#FF6B6B" text-anchor="middle">完成番茄</text>
+  <text x="70" y="245" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">150分钟</text>
+  
+  <rect x="137.5" y="190" width="100" height="70" rx="12" fill="#F0FFFE"/>
+  <text x="187.5" y="210" font-family="SF Pro Display" font-size="24" font-weight="600" fill="#4ECDC4" text-anchor="middle">4</text>
+  <text x="187.5" y="230" font-family="SF Pro Display" font-size="12" fill="#4ECDC4" text-anchor="middle">完成任务</text>
+  <text x="187.5" y="245" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">目标: 5个</text>
+  
+  <rect x="255" y="190" width="100" height="70" rx="12" fill="#FFFBF0"/>
+  <text x="305" y="210" font-family="SF Pro Display" font-size="24" font-weight="600" fill="#FFD93D" text-anchor="middle">85%</text>
+  <text x="305" y="230" font-family="SF Pro Display" font-size="12" fill="#FFD93D" text-anchor="middle">专注度</text>
+  <text x="305" y="245" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">较昨日+5%</text>
+  
+  <!-- 本周趋势图 -->
+  <rect y="274" width="375" height="180" fill="#FFFFFF"/>
+  <text x="20" y="300" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">本周趋势</text>
+  
+  <!-- 图表区域 -->
+  <rect x="20" y="310" width="335" height="120" fill="#FAFAFA" rx="8"/>
+  
+  <!-- Y轴标签 -->
+  <text x="15" y="320" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="end">10</text>
+  <text x="15" y="350" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="end">5</text>
+  <text x="15" y="380" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="end">0</text>
+  
+  <!-- 网格线 -->
+  <line x1="25" y1="320" x2="350" y2="320" stroke="#E5E5EA" stroke-width="1"/>
+  <line x1="25" y1="350" x2="350" y2="350" stroke="#E5E5EA" stroke-width="1"/>
+  <line x1="25" y1="380" x2="350" y2="380" stroke="#E5E5EA" stroke-width="1"/>
+  
+  <!-- 柱状图 -->
+  <rect x="35" y="350" width="20" height="30" fill="#FF6B6B" rx="2"/>
+  <rect x="65" y="335" width="20" height="45" fill="#FF6B6B" rx="2"/>
+  <rect x="95" y="340" width="20" height="40" fill="#FF6B6B" rx="2"/>
+  <rect x="125" y="330" width="20" height="50" fill="#FF6B6B" rx="2"/>
+  <rect x="155" y="345" width="20" height="35" fill="#FF6B6B" rx="2"/>
+  <rect x="185" y="325" width="20" height="55" fill="#FF6B6B" rx="2"/>
+  <rect x="215" y="335" width="20" height="45" fill="#4ECDC4" rx="2"/>
+  
+  <!-- X轴标签 -->
+  <text x="45" y="400" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">周一</text>
+  <text x="75" y="400" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">周二</text>
+  <text x="105" y="400" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">周三</text>
+  <text x="135" y="400" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">周四</text>
+  <text x="165" y="400" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">周五</text>
+  <text x="195" y="400" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">周六</text>
+  <text x="225" y="400" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">今日</text>
+  
+  <!-- 图例 -->
+  <rect x="260" y="320" width="8" height="8" fill="#FF6B6B" rx="2"/>
+  <text x="275" y="328" font-family="SF Pro Display" font-size="10" fill="#8E8E93">番茄数</text>
+  <rect x="260" y="335" width="8" height="8" fill="#4ECDC4" rx="2"/>
+  <text x="275" y="343" font-family="SF Pro Display" font-size="10" fill="#8E8E93">预测</text>
+  
+  <!-- 分类统计 -->
+  <rect y="454" width="375" height="150" fill="#FFFFFF"/>
+  <text x="20" y="480" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">分类统计</text>
+  
+  <!-- 环形图 -->
+  <circle cx="100" cy="540" r="50" fill="none" stroke="#F2F2F7" stroke-width="20"/>
+  <circle cx="100" cy="540" r="50" fill="none" stroke="#FF6B6B" stroke-width="20" stroke-dasharray="157" stroke-dashoffset="39" transform="rotate(-90 100 540)"/>
+  <circle cx="100" cy="540" r="50" fill="none" stroke="#4ECDC4" stroke-width="20" stroke-dasharray="78" stroke-dashoffset="-118" transform="rotate(-90 100 540)"/>
+  <circle cx="100" cy="540" r="50" fill="none" stroke="#FFD93D" stroke-width="20" stroke-dasharray="47" stroke-dashoffset="-196" transform="rotate(-90 100 540)"/>
+  
+  <!-- 中心文字 -->
+  <text x="100" y="535" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000" text-anchor="middle">6</text>
+  <text x="100" y="550" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">总番茄</text>
+  
+  <!-- 图例列表 -->
+  <rect x="170" y="500" width="8" height="8" fill="#FF6B6B" rx="2"/>
+  <text x="185" y="508" font-family="SF Pro Display" font-size="12" fill="#000000">工作</text>
+  <text x="320" y="508" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="end">3个 (50%)</text>
+  
+  <rect x="170" y="520" width="8" height="8" fill="#4ECDC4" rx="2"/>
+  <text x="185" y="528" font-family="SF Pro Display" font-size="12" fill="#000000">学习</text>
+  <text x="320" y="528" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="end">2个 (33%)</text>
+  
+  <rect x="170" y="540" width="8" height="8" fill="#FFD93D" rx="2"/>
+  <text x="185" y="548" font-family="SF Pro Display" font-size="12" fill="#000000">运动</text>
+  <text x="320" y="548" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="end">1个 (17%)</text>
+  
+  <rect x="170" y="560" width="8" height="8" fill="#F2F2F7" rx="2"/>
+  <text x="185" y="568" font-family="SF Pro Display" font-size="12" fill="#8E8E93">其他</text>
+  <text x="320" y="568" font-family="SF Pro Display" font-size="12" fill="#8E8E93" text-anchor="end">0个 (0%)</text>
+  
+  <!-- 成就徽章 -->
+  <rect y="604" width="375" height="124" fill="#F8F9FA"/>
+  <text x="20" y="630" font-family="SF Pro Display" font-size="16" font-weight="600" fill="#000000">本周成就</text>
+  
+  <!-- 徽章卡片 -->
+  <rect x="20" y="645" width="100" height="70" rx="12" fill="#FFFFFF"/>
+  <circle cx="70" cy="665" r="15" fill="#FFD93D"/>
+  <text x="70" y="670" font-family="SF Pro Display" font-size="16" text-anchor="middle">🏆</text>
+  <text x="70" y="690" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">专注达人</text>
+  <text x="70" y="705" font-family="SF Pro Display" font-size="8" fill="#8E8E93" text-anchor="middle">连续5天完成目标</text>
+  
+  <rect x="137.5" y="645" width="100" height="70" rx="12" fill="#FFFFFF"/>
+  <circle cx="187.5" cy="665" r="15" fill="#4ECDC4"/>
+  <text x="187.5" y="670" font-family="SF Pro Display" font-size="16" text-anchor="middle">⚡</text>
+  <text x="187.5" y="690" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">效率之星</text>
+  <text x="187.5" y="705" font-family="SF Pro Display" font-size="8" fill="#8E8E93" text-anchor="middle">单日完成8个番茄</text>
+  
+  <rect x="255" y="645" width="100" height="70" rx="12" fill="#FFFFFF"/>
+  <circle cx="305" cy="665" r="15" fill="#F2F2F7"/>
+  <text x="305" y="670" font-family="SF Pro Display" font-size="16" text-anchor="middle">🎯</text>
+  <text x="305" y="690" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">目标猎手</text>
+  <text x="305" y="705" font-family="SF Pro Display" font-size="8" fill="#8E8E93" text-anchor="middle">2/3 进度</text>
+  
+  <!-- 底部导航 -->
+  <rect y="728" width="375" height="84" fill="#FFFFFF"/>
+  <line x1="0" y1="728" x2="375" y2="728" stroke="#E5E5EA" stroke-width="1"/>
+  
+  <!-- 导航项 -->
+  <g>
+    <!-- 计时器 -->
+    <circle cx="75" cy="755" r="3" fill="none" stroke="#8E8E93" stroke-width="2"/>
+    <path d="M65 765C65 765 70 760 75 760C80 760 85 765 85 765" stroke="#8E8E93" stroke-width="2" fill="none"/>
+    <text x="75" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">计时器</text>
+    
+    <!-- 任务 -->
+    <rect x="140" y="750" width="20" height="15" rx="2" fill="#8E8E93"/>
+    <line x1="145" y1="755" x2="155" y2="755" stroke="#FFFFFF" stroke-width="1"/>
+    <line x1="145" y1="760" x2="155" y2="760" stroke="#FFFFFF" stroke-width="1"/>
+    <text x="150" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">任务</text>
+    
+    <!-- 统计 (当前页面) -->
+    <rect x="215" y="750" width="20" height="15" rx="2" fill="#FF6B6B"/>
+    <rect x="218" y="760" width="3" height="5" fill="#FFFFFF"/>
+    <rect x="222" y="757" width="3" height="8" fill="#FFFFFF"/>
+    <rect x="226" y="753" width="3" height="12" fill="#FFFFFF"/>
+    <rect x="230" y="755" width="3" height="10" fill="#FFFFFF"/>
+    <text x="225" y="785" font-family="SF Pro Display" font-size="10" fill="#FF6B6B" text-anchor="middle">统计</text>
+    
+    <!-- 设置 -->
+    <circle cx="300" cy="757.5" r="10" fill="none" stroke="#8E8E93" stroke-width="2"/>
+    <circle cx="300" cy="757.5" r="3" fill="#8E8E93"/>
+    <text x="300" y="785" font-family="SF Pro Display" font-size="10" fill="#8E8E93" text-anchor="middle">设置</text>
+  </g>
+  
+  <!-- Home Indicator -->
+  <rect x="150" y="795" width="75" height="4" rx="2" fill="#000000"/>
+</svg>
