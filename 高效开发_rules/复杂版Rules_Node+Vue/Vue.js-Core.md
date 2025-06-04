@@ -1,6 +1,6 @@
 ---
-description: Node.js and Express.js best practices for backend development
-globs: **/*.js, **/*.ts, src/**/*.ts
+description: Vue.js best practices and patterns for modern web applications
+globs: **/*.vue, **/*.ts, components/**/*
 ---
 
 # Vue.js 核心开发规范
